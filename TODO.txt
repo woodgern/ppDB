@@ -1,0 +1,21 @@
+TODO:
+
+  Gustaf:
+    - write API documentation of endpoint, returned JSON structure, etc (use swagger if you know it)
+      - for now, {base_url} is good for a replacement
+    - create the vertex API based on documentation
+    - set up database as required (local first, when we work out hosting then we can do prod)
+    
+  Nathan:
+    - research slack integration (python?)
+    - write the slack integration
+    - whip up the single word webpage
+ 
+  Both:
+    - hosting (AWS, University of Waterloo)
+    - think up more related endpoints we can open up
+      - a PUT endpoint that can gather words for us (how would they use it, should we add a front end webpage component
+      for that, how to prevent abuse, etc)
+      - other word groups
+      - something else that uses the pp database table
+     
