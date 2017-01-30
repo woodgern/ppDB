@@ -1,0 +1,11 @@
+.wrapper {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+.word {
+	text-align: center;
+	display: table-cell;
+    vertical-align: middle;
+    font-size: 750%;
+}
