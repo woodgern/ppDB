@@ -15,6 +15,7 @@ import ppDB.db.PPDatabaseImpl;
  * @author Gustaf Nilstadius
  *         Created by Gustaf Nilstadius ( hipernx ) on 2017-02-01.
  */
+@SuppressWarnings("ThrowableResultOfMethodCallIgnored")
 public class Server extends AbstractVerticle {
 
     private AsyncSQLClient asyncSQLClient;
@@ -47,6 +48,7 @@ public class Server extends AbstractVerticle {
                         fut.fail(result.cause());
                     }
                 });
+        System.out.println("Ventricle deployed " + this);
     }
 
     private void getPPHandler(RoutingContext routingContext){
