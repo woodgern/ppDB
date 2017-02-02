@@ -57,6 +57,7 @@ public class Server extends AbstractVerticle {
                         .setStatusCode(200)
                         .setStatusMessage("ok")
                         .putHeader("Content-Type", "application/json")
+                        .putHeader("Access-Control-Allow-Origin", "*")
                         .end(res.result().encode());
             } else {
                 res.cause().printStackTrace();
