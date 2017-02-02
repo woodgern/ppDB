@@ -18,6 +18,12 @@
             <organization>Paddle Nose Studios</organization>
             <organizationUrl>www.paddlenose.com</organizationUrl>
         </developer>
+        <developer>
+            <name>Nathan Woodger</name>
+            <email>woodgern@gmail.com</email>
+            <organization></organization>
+            <organizationUrl></organizationUrl>
+        </developer>
     </developers>
 
     <dependencies>
