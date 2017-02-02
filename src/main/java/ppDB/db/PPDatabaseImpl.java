@@ -31,5 +31,5 @@ public class PPDatabaseImpl implements PPDatabase {
     }
 
 
-    private String selectRandomPP = "SELECT * FROM pp ORDER BY RAND() LIMIT 1;";
+    private final String selectRandomPP = "SELECT * FROM pp ORDER BY RAND() LIMIT 1;";
 }
