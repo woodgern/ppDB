@@ -10,12 +10,5 @@
                 window.alert('error');
             }
         });
-
-        /*var x = $.get("http://192.168.1.108:3000/pp", function(data) {
-        	window.alert(data);
-            $("#pp").html(data.word);
-        }).fail(function(r) {
-        	window.alert(JSON.stringify(r));
-        });*/
     }
 })(window);
