@@ -7,6 +7,7 @@ import io.vertx.ext.asyncsql.AsyncSQLClient;
 import io.vertx.ext.asyncsql.MySQLClient;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.handler.LoggerHandler;
 import ppDB.db.PPDatabase;
 import ppDB.db.PPDatabaseImpl;
 
@@ -19,11 +20,17 @@ public class Server extends AbstractVerticle {
     private AsyncSQLClient asyncSQLClient;
     private PPDatabase ppDatabase;
     public void start(Future<Void> fut) {
-        /*
-            Init router
-         */
         Router router = Router.router(vertx);
+        /*
+            Init logger
+        */
+        router.route("/*").handler(LoggerHandler.create());
+
+        /*
+            Init routes
+         */
         router.get("/pp").handler(this::getPPHandler);
+
 
         /*
             Init Async DB
@@ -49,6 +56,7 @@ public class Server extends AbstractVerticle {
                 routingContext.response()
                         .setStatusCode(200)
                         .setStatusMessage("ok")
+                        .putHeader("Content-Type", "application/json")
                         .end(res.result().encode());
             } else {
                 res.cause().printStackTrace();
