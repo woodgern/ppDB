@@ -1,13 +1,10 @@
 package ppDB.db;
 
-import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
-import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.asyncsql.AsyncSQLClient;
 import io.vertx.ext.asyncsql.MySQLClient;
-import io.vertx.ext.sql.SQLConnection;
 import io.vertx.ext.unit.Async;
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner;
@@ -15,8 +12,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Gustaf Nilstadius
@@ -27,7 +22,7 @@ public class PPDatabaseImplTest {
 
     private AsyncSQLClient asyncSQLClient;
     private PPDatabase ppDatabase;
-    private Vertx vertx = Vertx.vertx();
+    private final Vertx vertx = Vertx.vertx();
 
     @Before
     public void setUp(TestContext context) throws Exception {
