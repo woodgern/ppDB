@@ -19,13 +19,14 @@ class StdOutListener(StreamListener):
 
     def on_data(self, data):
         data = json.loads(data)
+        print data['text']
         target = ""
         for mention in data['entities']['user_mentions']:
         	if target == "" and mention['screen_name'] != "ppdatabase":
         		target = mention['screen_name']
         		break
         response = requests.get(url)
-        api.update_status("@" + target + response.json()['word'])
+        api.update_status("@" + target + " " + response.json()['word'])
         return True
 
     def on_error(self, status):
