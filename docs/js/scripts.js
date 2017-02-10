@@ -1,6 +1,6 @@
 (function(exports) {    
     exports.startApp = function() {
-    	var url = 'http://ppdb.gustafn.com/pp';
+    	var url = 'https://ppdb.gustafn.com/pp';
     	$.ajax(url, {
             dataType: 'json',
             success: function(data) {
