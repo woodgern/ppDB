@@ -4,8 +4,7 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 import requests
 import json
-url = 'http://FILLINHERE'
-data = '{}'
+url = 'http://ppdb.gustafn.com/pp'
  
 CONSUMER_KEY = 'M6gCybQsVWx92siwhrupVzwRN'
 CONSUMER_SECRET = '11AQJVDi8MCmgtWxuxhPXNlDxfng8scETuqL1N8c5dNndGXP1a'
@@ -20,14 +19,13 @@ class StdOutListener(StreamListener):
 
     def on_data(self, data):
         data = json.loads(data)
-        print data['text']
         target = ""
         for mention in data['entities']['user_mentions']:
         	if target == "" and mention['screen_name'] != "ppdatabase":
         		target = mention['screen_name']
         		break
-        #response = requests.post(url, data=data)
-        api.update_status("@" + target + " johnson")
+        response = requests.get(url)
+        api.update_status("@" + target + response.json()['word'])
         return True
 
     def on_error(self, status):

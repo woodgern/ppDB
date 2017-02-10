@@ -1,6 +1,6 @@
 (function(exports) {    
     exports.startApp = function() {
-    	var url = 'http://192.168.1.108:3000/pp';
+    	var url = 'http://ppdb.gustafn.com/pp';
     	$.ajax(url, {
             dataType: 'json',
             success: function(data) {
