@@ -19,4 +19,4 @@ Reply form endpoints is formated as Json
 ```
     curl [URL]/pp
 ```
-Returns random synonym of penis 
+Returns random synonym for penis 
